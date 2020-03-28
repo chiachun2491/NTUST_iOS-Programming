@@ -11,7 +11,7 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var names = ["伯爵茶那堤", "冷萃咖啡", "春櫻蜜桃巧克力紅茶那堤", "氮氣冷萃咖啡", "深焦糖風味雲朵氮氣咖啡", "玫瑰蜜香茶那堤", "經典特調冷萃咖啡", "經典紅茶那堤", "薄荷柚子風味冷萃咖啡", "醇濃抹茶那堤", "香檸蜜柚冷萃咖啡"]
-    var style:UITableViewCell.EditingStyle = .none
+    var editingStyle: UITableViewCell.EditingStyle = .none
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var delButton: UIButton!
@@ -23,7 +23,7 @@ class TableViewController: UITableViewController {
         else {
             sender.setTitle("新增", for: .normal)
         }
-        style = .insert
+        editingStyle = .insert
         delButton.isEnabled = tableView.isEditing
         tableView.setEditing(!tableView.isEditing, animated: true)
     }
@@ -35,7 +35,7 @@ class TableViewController: UITableViewController {
         else {
             sender.setTitle("刪除", for: .normal)
         }
-        style = .delete
+        editingStyle = .delete
         addButton.isEnabled = tableView.isEditing
         tableView.setEditing(!tableView.isEditing, animated: true)
     }
@@ -107,7 +107,7 @@ class TableViewController: UITableViewController {
     */
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return style
+        return editingStyle
     }
 
     // MARK: - Navigation

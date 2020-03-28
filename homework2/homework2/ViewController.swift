@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
     
-    var imageName:String?
-    var itemName:String?
+    var imageName: String?
+    var itemName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         segueDataProcess(imageName: imageName, itemName: itemName)
     }
     
-    func segueDataProcess(imageName:String?, itemName:String?) {
+    func segueDataProcess(imageName: String?, itemName: String?) {
         textLabel.text = "飲料名稱：\(itemName!)"
         image.image = UIImage(named: imageName!)
     }
