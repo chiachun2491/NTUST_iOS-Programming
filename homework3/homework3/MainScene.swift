@@ -134,5 +134,4 @@ class MainScene: SKScene, SKPhysicsContactDelegate {
             print("Get point 100!\n")
         }
     }
-
 }

@@ -24,30 +24,22 @@ class GameOverScene: SKScene {
         bg.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         bg.zPosition = -1
         
-        let scoreLabel = SKLabelNode(text: "Score: \(score)")
-        scoreLabel.name = "scoreLabel"
-        scoreLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 80)
-        scoreLabel.fontName = "Avenir-Oblique"
-        scoreLabel.fontSize = 28
-        
-        let restartLabel = SKLabelNode(text: "Touch screen to restart")
-        restartLabel.name = "restartLabel"
-        restartLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 50)
-        restartLabel.fontName = "Avenir-Oblique"
-        restartLabel.fontSize = 20
-        restartLabel.run(SKAction.repeatForever(SKAction.sequence([
-            SKAction.fadeOut(withDuration: 0.5),
-            SKAction.fadeIn(withDuration: 0.5)
-        ])))
+        let textLabel = SKLabelNode(text: "You lose!")
+        textLabel.name = "textLabel"
+        textLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 80)
+        textLabel.fontName = "Avenir-Oblique"
+        textLabel.fontSize = 40
         
         self.addChild(bg)
-        self.addChild(scoreLabel)
-        self.addChild(restartLabel)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let mainScene = MainScene(size: self.size)
-        let doors = SKTransition.doorsOpenVertical(withDuration: 0.5)
-        self.view?.presentScene(mainScene, transition: doors)
+        self.addChild(textLabel)
+        
+        let alert = UIAlertController(title: "Score: \(score)", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Again", style: .default) { (_) in
+            let mainScene = MainScene(size: self.size)
+            let doors = SKTransition.doorsOpenVertical(withDuration: 0.5)
+            self.view?.presentScene(mainScene, transition: doors)
+        })
+        
+        self.scene?.view?.window?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 }
