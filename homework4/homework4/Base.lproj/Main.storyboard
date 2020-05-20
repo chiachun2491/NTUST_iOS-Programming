@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="homework4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-0.5" maxValue="1.5" translatesAutoresizingMaskIntoConstraints="NO" id="zOR-7X-Cet">
+                                <rect key="frame" x="46" y="545" width="331" height="31"/>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeCurrentTime:" destination="BYZ-38-t0r" eventType="valueChanged" id="kIm-jm-fR1"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="1D3-BD-Q8p">
+                                <rect key="frame" x="48" y="646" width="326.5" height="22.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="previous" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ao0-Wd-T2Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="22.5"/>
+                                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="backward.end.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="changeVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Bl-rf-ouj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="backward" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2b-08-SaN">
+                                        <rect key="frame" x="78" y="0.0" width="20" height="22.5"/>
+                                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="gobackward" catalog="system"/>
+                                        <connections>
+                                            <action selector="changeTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WdA-9d-OPT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="playpause" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSS-KU-QRq">
+                                        <rect key="frame" x="156" y="0.0" width="14.5" height="22.5"/>
+                                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="pause.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="playpause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3tJ-aT-Kkn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="forward" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRR-FM-Q44">
+                                        <rect key="frame" x="228.5" y="0.0" width="20" height="22.5"/>
+                                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="goforward" catalog="system"/>
+                                        <connections>
+                                            <action selector="changeTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A78-dz-QCX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="next" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-JL-nCS">
+                                        <rect key="frame" x="306.5" y="0.0" width="20" height="22.5"/>
+                                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="forward.end.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="changeVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rkZ-MM-Q0a"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="d58-4e-bdc">
+                                <rect key="frame" x="48" y="782" width="327" height="22"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="repeat" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfJ-Mt-BED">
+                                        <rect key="frame" x="0.0" y="0.0" width="22.5" height="22"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" image="repeat" catalog="system"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changePlayerMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Afs-x5-Que"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="shuffle" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeL-vH-5r9">
+                                        <rect key="frame" x="151.5" y="0.0" width="24" height="22"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="shuffle" catalog="system"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changePlayerMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="obt-sJ-tc7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="repeat1" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPK-7g-Y7B">
+                                        <rect key="frame" x="304.5" y="0.0" width="22.5" height="22"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="repeat.1" catalog="system"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changePlayerMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tLm-Fl-eBE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <slider contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ir0-vM-dU6">
+                                <rect key="frame" x="46" y="708" width="331" height="31"/>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="T8B-t9-GNj"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KmW-hs-HUF">
+                                <rect key="frame" x="0.0" y="110" width="414" height="352"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="220" translatesAutoresizingMaskIntoConstraints="NO" id="a2g-JX-fVr">
+                                <rect key="frame" x="48" y="583" width="327" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrZ-EB-IxC">
+                                        <rect key="frame" x="0.0" y="0.0" width="28.5" height="16"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAy-de-T2W">
+                                        <rect key="frame" x="298.5" y="0.0" width="28.5" height="16"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzd-4u-qf4">
+                                <rect key="frame" x="48" y="491" width="327" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zOR-7X-Cet" secondAttribute="trailing" constant="39" id="0O6-Mh-o9g"/>
+                            <constraint firstItem="1D3-BD-Q8p" firstAttribute="top" secondItem="a2g-JX-fVr" secondAttribute="bottom" constant="47" id="1ID-jN-Csx"/>
+                            <constraint firstItem="a2g-JX-fVr" firstAttribute="top" secondItem="zOR-7X-Cet" secondAttribute="bottom" constant="8" id="9EB-Mb-czY"/>
+                            <constraint firstItem="a2g-JX-fVr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="Bv9-gr-Kt2"/>
+                            <constraint firstItem="zOR-7X-Cet" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="CQs-TW-66O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a2g-JX-fVr" secondAttribute="trailing" constant="39" id="NLl-zR-93m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ir0-vM-dU6" secondAttribute="trailing" constant="39" id="NV1-1F-2s3"/>
+                            <constraint firstItem="Ir0-vM-dU6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="Ptu-jD-bej"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d58-4e-bdc" secondAttribute="bottom" constant="58" id="WlD-cR-A8M"/>
+                            <constraint firstItem="d58-4e-bdc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="ceT-iG-NSS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1D3-BD-Q8p" secondAttribute="trailing" constant="39.5" id="dbl-88-jKD"/>
+                            <constraint firstItem="Ir0-vM-dU6" firstAttribute="top" secondItem="1D3-BD-Q8p" secondAttribute="bottom" constant="39.5" id="e2o-5C-1pD"/>
+                            <constraint firstItem="d58-4e-bdc" firstAttribute="top" secondItem="Ir0-vM-dU6" secondAttribute="bottom" constant="44" id="gWB-iQ-eOw"/>
+                            <constraint firstItem="1D3-BD-Q8p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="jLn-8z-geJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d58-4e-bdc" secondAttribute="trailing" constant="39" id="sy3-QH-CZh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backwardButton" destination="r2b-08-SaN" id="3nL-qr-153"/>
+                        <outlet property="forwardButton" destination="SRR-FM-Q44" id="I6t-Um-Ca4"/>
+                        <outlet property="nextButton" destination="BZe-JL-nCS" id="e7J-dH-d8V"/>
+                        <outlet property="playpauseButton" destination="PSS-KU-QRq" id="Yc9-hd-Wd5"/>
+                        <outlet property="previousButton" destination="ao0-Wd-T2Z" id="Tlz-OV-j0g"/>
+                        <outlet property="progressLabel" destination="xrZ-EB-IxC" id="Xif-gE-H1h"/>
+                        <outlet property="progressSlider" destination="zOR-7X-Cet" id="TXi-Qy-Ozq"/>
+                        <outlet property="repeat1Button" destination="OPK-7g-Y7B" id="uvL-vm-S2L"/>
+                        <outlet property="repeatButton" destination="sfJ-Mt-BED" id="q5w-4M-Q47"/>
+                        <outlet property="shuffleButton" destination="XeL-vH-5r9" id="14G-nA-hrP"/>
+                        <outlet property="totalLabel" destination="nAy-de-T2W" id="weM-GX-jui"/>
+                        <outlet property="videoLabel" destination="hzd-4u-qf4" id="c4Y-Yi-ToV"/>
+                        <outlet property="videoView" destination="KmW-hs-HUF" id="aDh-vq-PT4"/>
+                        <outlet property="volumeSlider" destination="Ir0-vM-dU6" id="VDf-b0-22u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.23188405797103" y="125.89285714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backward.end.fill" catalog="system" width="64" height="50"/>
+        <image name="forward.end.fill" catalog="system" width="64" height="50"/>
+        <image name="gobackward" catalog="system" width="60" height="64"/>
+        <image name="goforward" catalog="system" width="60" height="64"/>
+        <image name="pause.fill" catalog="system" width="58" height="64"/>
+        <image name="repeat" catalog="system" width="64" height="48"/>
+        <image name="repeat.1" catalog="system" width="64" height="48"/>
+        <image name="shuffle" catalog="system" width="64" height="46"/>
+    </resources>
+</document>
