@@ -101,9 +101,6 @@ class LandmarkListTableViewController: UITableViewController, CLLocationManagerD
                 self.myUserDefaults.set(self.showDistance, forKey: "showDistance")
                 self.myUserDefaults.synchronize()
                 // 更新 table
-                self.apiData.removeAll()
-                self.tableView.reloadData()
-                print("Cleaned old data.")
                 self.refreshControl!.beginRefreshingManually()
             }
             else {
@@ -168,9 +165,6 @@ class LandmarkListTableViewController: UITableViewController, CLLocationManagerD
             self.myUserDefaults.set(Double(currentLocation.coordinate.longitude), forKey: "userLongitude")
             self.myUserDefaults.synchronize()
             // 更新 table
-            self.apiData.removeAll()
-            self.tableView.reloadData()
-            print("Cleaned old data.")
             self.refreshControl?.beginRefreshingManually()
         }
     }
@@ -251,6 +245,9 @@ class LandmarkListTableViewController: UITableViewController, CLLocationManagerD
     }
     
     @objc func getLandmarkDataForObjc() {
+        self.apiData.removeAll()
+        self.tableView.reloadData()
+        print("Cleaned old data.")
         getLandmarkData {
             self.resortLandmarkData()
             self.refreshControl?.endRefreshing()
