@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--台北市行道樹-->
+        <!--台北市旅遊景點-->
         <scene sceneID="Fpf-Jb-LN0">
             <objects>
-                <tableViewController title="台北市行道樹" id="hH3-Vl-WQQ" customClass="TreeListTableViewController" customModule="homework5" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hH3-Vl-WQQ" customClass="LandmarkListTableViewController" customModule="homework5" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="7Fl-4N-0El">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,15 +37,15 @@
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="leaf.arrow.circlepath" catalog="system" id="zap-Nm-vvj">
-                                            <rect key="frame" x="22" y="10" width="20" height="21"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="flag.circle.fill" catalog="system" id="zap-Nm-vvj">
+                                            <rect key="frame" x="22" y="12" width="20" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="Zfk-g8-Wc3" kind="show" identifier="treeDetailSegue" id="ixS-CZ-kvU"/>
+                                    <segue destination="Zfk-g8-Wc3" kind="show" identifier="DetailSegue" id="ixS-CZ-kvU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -54,16 +54,22 @@
                             <outlet property="delegate" destination="hH3-Vl-WQQ" id="Gg1-7D-wth"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="台北市行道樹" id="9TS-ky-Yrj"/>
+                    <navigationItem key="navigationItem" title="台北市旅遊景點" id="9TS-ky-Yrj">
+                        <barButtonItem key="rightBarButtonItem" image="mappin.and.ellipse" catalog="system" id="ae5-2b-zf6">
+                            <connections>
+                                <action selector="setDistance:" destination="hH3-Vl-WQQ" id="dF9-kf-psH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHE-Pg-Isy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="719" y="362"/>
         </scene>
-        <!--Tree Detail Table View Controller-->
+        <!--Landmark Detail Table View Controller-->
         <scene sceneID="mTa-V2-KSB">
             <objects>
-                <tableViewController id="Zfk-g8-Wc3" customClass="TreeDetailTableViewController" customModule="homework5" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Zfk-g8-Wc3" customClass="LandmarkDetailTableViewController" customModule="homework5" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="gSP-Cg-ePt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +83,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="編號" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rAb-rG-Fox">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rAb-rG-Fox">
                                                     <rect key="frame" x="20" y="12" width="35" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -101,8 +107,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="樹種" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Grb-FI-J7P">
-                                                    <rect key="frame" x="20" y="12" width="35" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="開放時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Grb-FI-J7P">
+                                                    <rect key="frame" x="20" y="12" width="69.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -125,8 +131,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="樹胸徑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rYa-c6-2QZ">
-                                                    <rect key="frame" x="20" y="12" width="52" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="電話" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rYa-c6-2QZ">
+                                                    <rect key="frame" x="20" y="12" width="35" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -149,7 +155,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="樹高" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5qx-SC-2hs">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="傳真" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5qx-SC-2hs">
                                                     <rect key="frame" x="20" y="12" width="35" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -166,25 +172,18 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="dx4-hM-MtT" detailTextLabel="M8Y-Fp-5WP" style="IBUITableViewCellStyleValue1" id="hAs-wa-jFJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="dx4-hM-MtT" style="IBUITableViewCellStyleDefault" id="hAs-wa-jFJ">
                                         <rect key="frame" x="20" y="229.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hAs-wa-jFJ" id="W07-wW-mIK">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="調查日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dx4-hM-MtT">
-                                                    <rect key="frame" x="20" y="12" width="69.5" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="旅遊局資訊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dx4-hM-MtT">
+                                                    <rect key="frame" x="20" y="0.0" width="315" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M8Y-Fp-5WP">
-                                                    <rect key="frame" x="310" y="12" width="44" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -225,7 +224,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="路段" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0oq-0c-UNR">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0oq-0c-UNR">
                                                     <rect key="frame" x="20" y="12" width="35" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -242,32 +241,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="jiu-1l-eXR" detailTextLabel="3s3-Ac-9sG" style="IBUITableViewCellStyleValue1" id="soG-3O-9qp">
-                                        <rect key="frame" x="20" y="416" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="soG-3O-9qp" id="Qnz-HY-ZTN">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jiu-1l-eXR">
-                                                    <rect key="frame" x="20" y="12" width="35" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3s3-Ac-9sG">
-                                                    <rect key="frame" x="310" y="12" width="44" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="t5h-mY-n4k" style="IBUITableViewCellStyleDefault" id="9LU-Ll-PKi">
-                                        <rect key="frame" x="20" y="459.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="416" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9LU-Ll-PKi" id="J8M-JD-Gdx">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
@@ -283,7 +258,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="lzs-Zz-aA5" kind="show" identifier="treeMapSegue" id="Dwf-lz-GCw"/>
+                                            <segue destination="lzs-Zz-aA5" kind="show" identifier="MapSegue" id="Dwf-lz-GCw"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -296,24 +271,22 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Z0z-KQ-4lE"/>
                     <connections>
-                        <outlet property="treeDiameterLabel" destination="T4a-Bf-iPB" id="t79-u7-lUe"/>
-                        <outlet property="treeDistLabel" destination="lO1-Ru-Jhe" id="neQ-W7-AnC"/>
-                        <outlet property="treeHeightLabel" destination="K1S-GU-BaR" id="qJo-KY-yaC"/>
-                        <outlet property="treeIDLabel" destination="pa9-80-EEJ" id="svn-Wi-6Sx"/>
-                        <outlet property="treeRegionLabel" destination="kFr-Hu-XJj" id="Toz-Dj-yEC"/>
-                        <outlet property="treeRegionRemarkLabel" destination="3s3-Ac-9sG" id="t1o-DB-6HM"/>
-                        <outlet property="treeSurveyDateLabel" destination="M8Y-Fp-5WP" id="hsR-YU-zkW"/>
-                        <outlet property="treeTypeLabel" destination="rUy-On-bYl" id="JYI-jl-KBT"/>
+                        <outlet property="addressLabel" destination="kFr-Hu-XJj" id="Toz-Dj-yEC"/>
+                        <outlet property="distLabel" destination="lO1-Ru-Jhe" id="neQ-W7-AnC"/>
+                        <outlet property="faxLabel" destination="K1S-GU-BaR" id="qJo-KY-yaC"/>
+                        <outlet property="nameLabel" destination="pa9-80-EEJ" id="svn-Wi-6Sx"/>
+                        <outlet property="openTimeLabel" destination="rUy-On-bYl" id="JYI-jl-KBT"/>
+                        <outlet property="telLabel" destination="T4a-Bf-iPB" id="t79-u7-lUe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pX-Yx-Ij7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1565" y="362"/>
         </scene>
-        <!--Tree Location View Controller-->
+        <!--Landmark Location View Controller-->
         <scene sceneID="XZN-yU-uwZ">
             <objects>
-                <viewController id="lzs-Zz-aA5" customClass="TreeLocationViewController" customModule="homework5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lzs-Zz-aA5" customClass="LandmarkLocationViewController" customModule="homework5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3h0-r6-RU8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,7 +305,7 @@
                         <viewLayoutGuide key="safeArea" id="bqJ-km-w8a"/>
                     </view>
                     <navigationItem key="navigationItem" id="MoP-Jc-5mD">
-                        <barButtonItem key="rightBarButtonItem" image="car.fill" catalog="system" style="plain" id="Bcd-Jh-k0v">
+                        <barButtonItem key="rightBarButtonItem" image="car.fill" catalog="system" id="Bcd-Jh-k0v">
                             <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="navigationRoute:" destination="lzs-Zz-aA5" id="MWd-r9-9a8"/>
@@ -345,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEU-0y-HBe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2580" y="362"/>
+            <point key="canvasLocation" x="2606" y="46"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q3Q-4z-5w9">
@@ -367,6 +340,7 @@
     </scenes>
     <resources>
         <image name="car.fill" catalog="system" width="128" height="93"/>
-        <image name="leaf.arrow.circlepath" catalog="system" width="121" height="128"/>
+        <image name="flag.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
     </resources>
 </document>

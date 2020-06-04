@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		7B1EAB022484E55A0014AC46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1EAB012484E55A0014AC46 /* Alamofire */; };
 		7B1EAB052484E5D30014AC46 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1EAB042484E5D30014AC46 /* SwiftyJSON */; };
-		7B1EAB072484F7990014AC46 /* TreeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EAB062484F7990014AC46 /* TreeListTableViewController.swift */; };
-		7B1EAB092484F7AE0014AC46 /* TreeDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EAB082484F7AE0014AC46 /* TreeDetailTableViewController.swift */; };
-		7B1EAB0B2484F7D90014AC46 /* TreeLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EAB0A2484F7D90014AC46 /* TreeLocationViewController.swift */; };
-		7B1EAB102485F4FC0014AC46 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EAB0F2485F4FC0014AC46 /* Tree.swift */; };
+		7B1EAB072484F7990014AC46 /* LandmarkListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EAB062484F7990014AC46 /* LandmarkListTableViewController.swift */; };
+		7B1EAB092484F7AE0014AC46 /* LandmarkDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EAB082484F7AE0014AC46 /* LandmarkDetailTableViewController.swift */; };
+		7B1EAB0B2484F7D90014AC46 /* LandmarkLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EAB0A2484F7D90014AC46 /* LandmarkLocationViewController.swift */; };
+		7B1EAB102485F4FC0014AC46 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EAB0F2485F4FC0014AC46 /* Landmark.swift */; };
 		7B33BA972484DFD80022A9A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B33BA962484DFD80022A9A0 /* AppDelegate.swift */; };
 		7B33BA992484DFD80022A9A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B33BA982484DFD80022A9A0 /* SceneDelegate.swift */; };
 		7B33BA9E2484DFD80022A9A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B33BA9C2484DFD80022A9A0 /* Main.storyboard */; };
@@ -22,10 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7B1EAB062484F7990014AC46 /* TreeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListTableViewController.swift; sourceTree = "<group>"; };
-		7B1EAB082484F7AE0014AC46 /* TreeDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDetailTableViewController.swift; sourceTree = "<group>"; };
-		7B1EAB0A2484F7D90014AC46 /* TreeLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeLocationViewController.swift; sourceTree = "<group>"; };
-		7B1EAB0F2485F4FC0014AC46 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		7B1EAB062484F7990014AC46 /* LandmarkListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkListTableViewController.swift; sourceTree = "<group>"; };
+		7B1EAB082484F7AE0014AC46 /* LandmarkDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetailTableViewController.swift; sourceTree = "<group>"; };
+		7B1EAB0A2484F7D90014AC46 /* LandmarkLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkLocationViewController.swift; sourceTree = "<group>"; };
+		7B1EAB0F2485F4FC0014AC46 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		7B33BA932484DFD80022A9A0 /* homework5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B33BA962484DFD80022A9A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B33BA982484DFD80022A9A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,10 +75,10 @@
 				7B33BA9F2484DFDB0022A9A0 /* Assets.xcassets */,
 				7B33BAA12484DFDB0022A9A0 /* LaunchScreen.storyboard */,
 				7B33BAA42484DFDB0022A9A0 /* Info.plist */,
-				7B1EAB062484F7990014AC46 /* TreeListTableViewController.swift */,
-				7B1EAB082484F7AE0014AC46 /* TreeDetailTableViewController.swift */,
-				7B1EAB0A2484F7D90014AC46 /* TreeLocationViewController.swift */,
-				7B1EAB0F2485F4FC0014AC46 /* Tree.swift */,
+				7B1EAB062484F7990014AC46 /* LandmarkListTableViewController.swift */,
+				7B1EAB082484F7AE0014AC46 /* LandmarkDetailTableViewController.swift */,
+				7B1EAB0A2484F7D90014AC46 /* LandmarkLocationViewController.swift */,
+				7B1EAB0F2485F4FC0014AC46 /* Landmark.swift */,
 			);
 			path = homework5;
 			sourceTree = "<group>";
@@ -163,12 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B1EAB102485F4FC0014AC46 /* Tree.swift in Sources */,
-				7B1EAB092484F7AE0014AC46 /* TreeDetailTableViewController.swift in Sources */,
+				7B1EAB102485F4FC0014AC46 /* Landmark.swift in Sources */,
+				7B1EAB092484F7AE0014AC46 /* LandmarkDetailTableViewController.swift in Sources */,
 				7B33BA972484DFD80022A9A0 /* AppDelegate.swift in Sources */,
 				7B33BA992484DFD80022A9A0 /* SceneDelegate.swift in Sources */,
-				7B1EAB072484F7990014AC46 /* TreeListTableViewController.swift in Sources */,
-				7B1EAB0B2484F7D90014AC46 /* TreeLocationViewController.swift in Sources */,
+				7B1EAB072484F7990014AC46 /* LandmarkListTableViewController.swift in Sources */,
+				7B1EAB0B2484F7D90014AC46 /* LandmarkLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

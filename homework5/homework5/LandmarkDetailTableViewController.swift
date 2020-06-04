@@ -1,5 +1,5 @@
 //
-//  TreeDetailTableViewController.swift
+//  LandmarkDetailTableViewController.swift
 //  homework5
 //
 //  Created by Jeffery Ho on 2020/6/1.
@@ -8,49 +8,39 @@
 
 import UIKit
 
-class TreeDetailTableViewController: UITableViewController {
+class LandmarkDetailTableViewController: UITableViewController {
     
-    var tree: Tree?
-    @IBOutlet weak var treeIDLabel: UILabel!
-    @IBOutlet weak var treeTypeLabel: UILabel!
-    @IBOutlet weak var treeDiameterLabel: UILabel!
-    @IBOutlet weak var treeHeightLabel: UILabel!
-    @IBOutlet weak var treeSurveyDateLabel: UILabel!
+    var landmark: Landmark?
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var openTimeLabel: UILabel!
+    @IBOutlet weak var telLabel: UILabel!
+    @IBOutlet weak var faxLabel: UILabel!
     
-    @IBOutlet weak var treeDistLabel: UILabel!
-    @IBOutlet weak var treeRegionLabel: UILabel!
-    @IBOutlet weak var treeRegionRemarkLabel: UILabel!
+    @IBOutlet weak var distLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let treeID = tree?.treeID {
-            treeIDLabel.text = treeID
+        if let name = landmark?.name {
+            nameLabel.text = name
         }
-        if let treeType = tree?.treeType {
-            treeTypeLabel.text = treeType
+        if let openTime = landmark?.openTime {
+            openTimeLabel.text = openTime
         }
-        if let treeDiameter = tree?.diameter {
-            treeDiameterLabel.text = "\(treeDiameter) m"
+        if let tel = landmark?.tel {
+            telLabel.text = tel
         }
-        if let treeHeight = tree?.treeHeight {
-            treeHeightLabel.text = "\(treeHeight) m"
-        }
-        
-        if let treeSurveyDate = tree?.surveyDate {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            treeSurveyDateLabel.text = dateFormatter.string(from: treeSurveyDate)
+        if let fax = landmark?.fax {
+            faxLabel.text = fax
         }
         
-        if let treeDist = tree?.dist {
-            treeDistLabel.text = treeDist
+        if let dist = landmark?.dist {
+            distLabel.text = dist
         }
-        if let treeRegion = tree?.region {
-            treeRegionLabel.text = treeRegion
+        if let address = landmark?.address {
+            addressLabel.text = address
         }
-        if let treeRegionRemark = tree?.regionRemark {
-            treeRegionRemarkLabel.text = treeRegionRemark
-        }
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,6 +50,15 @@ class TreeDetailTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath == [0, 4] {
+            if self.landmark?.url != nil {
+                UIApplication.shared.open((self.landmark?.url)!)
+            }
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections
@@ -123,10 +122,10 @@ class TreeDetailTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "treeMapSegue" {
-            let controller = segue.destination as? TreeLocationViewController
+        if segue.identifier == "MapSegue" {
+            let controller = segue.destination as? LandmarkLocationViewController
             
-            controller?.tree = self.tree
+            controller?.landmark = self.landmark
         }
     }
 

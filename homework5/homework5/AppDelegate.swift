@@ -46,8 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             // 設置定位權限的紀錄
             self.myUserDefaults.set(true, forKey: "locationAuth")
             // 更新記錄的座標 for 取得有限數量的資料
-            self.myUserDefaults.set(0.0, forKey: "treeRecordLatitude")
-            self.myUserDefaults.set(0.0, forKey: "treeRecordLongitude")
+            self.myUserDefaults.set(0.0, forKey: "userLatitude")
+            self.myUserDefaults.set(0.0, forKey: "userLongitude")
             
             self.myUserDefaults.synchronize()
         }
@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             let alertController = UIAlertController( title: "定位服務已關閉", message: "如要變更權限，請至 設定 > 隱私權 > 定位服務 開啟", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "確認", style: .default, handler:nil)
             alertController.addAction(okAction)
-            let viewController = UIApplication.shared.windows.first!.rootViewController as! TreeListTableViewController
+            let viewController = UIApplication.shared.windows.first!.rootViewController as! LandmarkListTableViewController
             viewController.present(alertController, animated: true, completion: nil)
             
             // 設置定位權限的紀錄
